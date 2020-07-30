@@ -1,15 +1,16 @@
-import React, { Fragment } from 'react';
-import styled from '@emotion/styled';
-import PropTypes from 'prop-types';
+import React, { Fragment } from "react";
+import styled from "@emotion/styled";
+import PropTypes from "prop-types";
+
+const colors = {
+  primary: "green",
+  secondary: "red",
+  tertiary: "yellow",
+};
 
 const ButtonEl = styled.button`
   color: white;
-  background-color: ${(props) =>
-    props.type === 'primary'
-      ? 'green'
-      : props.type === 'secondary'
-      ? 'blue'
-      : 'red'};
+  background-color: ${(props) => colors[props.type]};
   padding: 10px;
   border: none;
   outline: none;
@@ -34,10 +35,10 @@ Button.propTypes = {
   /* Set the text for the button */
   children: PropTypes.string.required,
   /* Set the type of the button */
-  type: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
+  type: PropTypes.oneOf(["primary", "secondary", "tertiary"]),
 };
 
 Button.defaultProps = {
-  type: 'primary',
+  type: "primary",
 };
 export default Button;
